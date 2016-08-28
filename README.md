@@ -1,4 +1,4 @@
-# template-colors
+# template-colors [![Build Status](https://travis-ci.org/icodeforlove/template-colors.png?branch=master)](https://travis-ci.org/icodeforlove/template-colors)
 
 beautiful color usage within template literals
 

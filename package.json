@@ -7,6 +7,10 @@
     "test": "npm run build; ./node_modules/.bin/babel ./spec/ --out-dir ./.spec/; ./node_modules/.bin/jasmine-node ./.spec/*",
     "build": "./node_modules/.bin/babel ./src/ --out-dir ./dist/;"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/icodeforlove/template-colors.git"
+  },
   "author": {
     "name": "Chad Scira",
     "email": "chadvscira@gmail.com"
@@ -27,6 +31,7 @@
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
+    "babel-runtime": "^6.11.6",
     "eslint": "^3.4.0",
     "eslint-plugin-babel": "^3.3.0",
     "eslint-plugin-jasmine": "^1.8.1",
