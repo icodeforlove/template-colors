@@ -12,7 +12,7 @@ npm install --save template-colors
 
 you can compose colored template literals in many ways
 
-```
+```javascript
 import C from 'template-colors';
 
 console.log(C`found ${17}.bold new users`);
