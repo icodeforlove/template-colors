@@ -24,3 +24,5 @@ console.log(error`could not delete ${users.length}.bold users`);
 
 console.log(C`user ${user.name.red} logged in at ${new Date()}.bold`);
 ```
+
+![screenshot](https://img42.com/g2veI+)
