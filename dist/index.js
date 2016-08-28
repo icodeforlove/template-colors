@@ -44,11 +44,6 @@ function compileTemplate(defaultStyles, strings) {
 		// strip style commands
 		item = String(item).replace(COLORS_REGEXP, '');
 
-		// apply default styles
-		defaultStyles.forEach(function (style) {
-			return item = item[style];
-		});
-
 		if (!(typeof next === 'undefined' ? 'undefined' : (0, _typeof3.default)(next)) != undefined) {
 			var colorsMatch = String(next).match(COLORS_REGEXP);
 
@@ -63,6 +58,16 @@ function compileTemplate(defaultStyles, strings) {
 					return after = after[style];
 				});
 			}
+
+			// apply default styles to item
+			defaultStyles.forEach(function (style) {
+				return item = item[style];
+			});
+
+			// apply default styles to after
+			defaultStyles.forEach(function (style) {
+				return after = after[style];
+			});
 
 			// concatenate new segment
 			string += item + after;

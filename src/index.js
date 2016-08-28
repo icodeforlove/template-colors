@@ -14,9 +14,6 @@ function compileTemplate (defaultStyles, strings, ...replacements) {
 		// strip style commands
 		item = String(item).replace(COLORS_REGEXP, '');
 
-		// apply default styles
-		defaultStyles.forEach(style => (item = item[style]));
-
 		if (!typeof next != undefined) {
 			let colorsMatch = String(next).match(COLORS_REGEXP);
 
@@ -27,6 +24,12 @@ function compileTemplate (defaultStyles, strings, ...replacements) {
 				// apply default styles
 				defaultStyles.forEach(style => (after = after[style]));
 			}
+
+			// apply default styles to item
+			defaultStyles.forEach(style => (item = item[style]));
+
+			// apply default styles to after
+			defaultStyles.forEach(style => (after = after[style]));
 
 			// concatenate new segment
 			string += item + after;
