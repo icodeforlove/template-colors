@@ -5,7 +5,7 @@ beautiful color usage within template literals
 ## install
 
 ```
-npm install template-colors
+npm install --save template-colors
 ```
 
 ## usage
