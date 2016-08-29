@@ -1,6 +1,6 @@
 # template-colors [![Build Status](https://travis-ci.org/icodeforlove/template-colors.png?branch=master)](https://travis-ci.org/icodeforlove/template-colors)
 
-beautiful color usage within template literals
+beautiful color usage within template literals (uses [colors](https://github.com/marak/colors.js) behind the scenes)
 
 ## install
 
@@ -31,3 +31,23 @@ console.log(c`
 ```
 
 ![screenshot](https://img42.com/nwedl+)
+
+## features
+
+inline style commands
+
+```javascript
+c`${'foo bar'}.bold.red`
+```
+
+pre existing styles
+
+```javascript
+c`${'foo bar'.bold}.red`
+```
+
+defalt styles to apply to whole string
+
+```javascript
+c`${'foo'}.red bar`.grey.underline
+```
