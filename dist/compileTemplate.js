@@ -40,11 +40,6 @@ function compileTemplate(defaultStyles, strings) {
 				colorsMatch[1].split('.').forEach(function (style) {
 					return after = after[style];
 				});
-
-				// apply default styles
-				defaultStyles.forEach(function (style) {
-					return after = after[style];
-				});
 			}
 
 			// apply default styles to item

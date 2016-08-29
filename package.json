@@ -1,6 +1,6 @@
 {
   "name": "template-colors",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "beautiful color usage within template literals",
   "main": "dist/index.js",
   "scripts": {

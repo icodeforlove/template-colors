@@ -20,9 +20,6 @@ export default function compileTemplate (defaultStyles, strings, ...replacements
 			if (colorsMatch && after) {
 				// apply styles
 				colorsMatch[1].split('.').forEach(style => (after = after[style]));
-
-				// apply default styles
-				defaultStyles.forEach(style => (after = after[style]));
 			}
 
 			// apply default styles to item
