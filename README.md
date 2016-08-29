@@ -21,7 +21,7 @@ console.log(c`found ${17}.bold new users`.bold.underline.grey);
 
 console.log(c`could not delete ${6}.bold.green users`.underline.red);
 
-console.log(c`user ${'John Doe'}.white.bold ${'logged'}.yellow in at ${new Date()}.white.underline.bold`.grey.dim);
+console.log(c`user ${'John Doe'}.white.bold ${'logged'}.yellow in at ${new Date()}.white.bold`.grey);
 
 console.log(c`
           This is ${'a'}.blue.italic
@@ -30,4 +30,4 @@ console.log(c`
 `.grey);
 ```
 
-![screenshot](https://img42.com/YJJzi+)
+![screenshot](https://img42.com/nwedl+)
