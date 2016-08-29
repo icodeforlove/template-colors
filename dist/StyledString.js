@@ -24,6 +24,10 @@ var _compileTemplate = require('./compileTemplate');
 
 var _compileTemplate2 = _interopRequireDefault(_compileTemplate);
 
+var _styles = require('./styles');
+
+var _styles2 = _interopRequireDefault(_styles);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var StyledString = function () {
@@ -39,11 +43,23 @@ var StyledString = function () {
 		value: function toString() {
 			return _compileTemplate2.default.apply(undefined, [this.styles].concat((0, _toConsumableArray3.default)(this.templateArgs)));
 		}
+	}, {
+		key: 'rgb',
+		value: function rgb(r, g, b) {
+			this.styles.push('rgb(' + r + ',' + g + ',' + b + ')');
+			return this;
+		}
+	}, {
+		key: 'rgbBG',
+		value: function rgbBG(r, g, b) {
+			this.styles.push('rgbBG(' + r + ',' + g + ',' + b + ')');
+			return this;
+		}
 	}]);
 	return StyledString;
 }();
 
-['reset', 'bold', 'dim', 'italic', 'underline', 'inverse', 'hidden', 'strikethrough', 'black', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white', 'gray', 'grey', 'bgBlack', 'bgRed', 'bgGreen', 'bgYellow', 'bgBlue', 'bgMagenta', 'bgCyan', 'bgWhite', 'blackBG', 'redBG', 'greenBG', 'yellowBG', 'blueBG', 'magentaBG', 'cyanBG', 'whiteBG'].forEach(function (property) {
+_styles2.default.forEach(function (property) {
 	(0, _defineProperty2.default)(StyledString.prototype, property, {
 		get: function get() {
 			if (this.styles.indexOf(property) === -1) {

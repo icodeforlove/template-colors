@@ -1,5 +1,7 @@
 # template-colors [![Build Status](https://travis-ci.org/icodeforlove/template-colors.png?branch=master)](https://travis-ci.org/icodeforlove/template-colors)
 
+### next generation terminal colors!
+
 beautiful color usage within template literals (uses [colors](https://github.com/marak/colors.js) behind the scenes)
 
 ## install
@@ -34,6 +36,13 @@ console.log(c`
 
 ## features
 
+rgb / rgbBG (may be unsupported by your terminal)
+
+```javascript
+c`foo bar`.rgb(255,0,0)
+c`foo bar`.rgb(255,0,0).rgbBG(0,0,0)
+```
+
 inline style commands
 
 ```javascript
@@ -50,4 +59,13 @@ defalt styles to apply to whole string
 
 ```javascript
 c`${'foo'}.red bar`.grey.underline
+```
+
+custom defined styles
+```javascript
+c.define('error', 'rgb(255,0,0)');
+c.define('log', ['rgb(0,0,0)', 'rgbBG(255,255,255)', 'bold', 'underline', 'italic']);
+
+c`foo bar`.error
+c`foo bar`.log
 ```

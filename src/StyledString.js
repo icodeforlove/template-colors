@@ -1,4 +1,5 @@
 import compileTemplate from './compileTemplate';
+import styles from './styles';
 
 class StyledString {
 	constructor (templateArgs) {
@@ -9,43 +10,18 @@ class StyledString {
 	toString () {
 		return compileTemplate(this.styles, ...this.templateArgs);
 	}
+
+	rgb (r, g, b) {
+		this.styles.push(`rgb(${r},${g},${b})`);
+		return this;
+	}
+
+	rgbBG (r, g, b) {
+		this.styles.push(`rgbBG(${r},${g},${b})`);
+		return this;
+	}
 }
-[
-	'reset',
-	'bold',
-	'dim',
-	'italic',
-	'underline',
-	'inverse',
-	'hidden',
-	'strikethrough',
-	'black',
-	'red',
-	'green',
-	'yellow',
-	'blue',
-	'magenta',
-	'cyan',
-	'white',
-	'gray',
-	'grey',
-	'bgBlack',
-	'bgRed',
-	'bgGreen',
-	'bgYellow',
-	'bgBlue',
-	'bgMagenta',
-	'bgCyan',
-	'bgWhite',
-	'blackBG',
-	'redBG',
-	'greenBG',
-	'yellowBG',
-	'blueBG',
-	'magentaBG',
-	'cyanBG',
-	'whiteBG'
-].forEach(property => {
+styles.forEach(property => {
 	Object.defineProperty(StyledString.prototype, property, {
 		get: function () {
 			if (this.styles.indexOf(property) === -1) {
