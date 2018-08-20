@@ -33,6 +33,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var StyledString = function () {
 	function StyledString(templateArgs) {
 		(0, _classCallCheck3.default)(this, StyledString);
+		this.name = 'StyledString';
 
 		this.styles = [];
 		this.templateArgs = templateArgs;

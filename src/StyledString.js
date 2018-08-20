@@ -7,6 +7,8 @@ class StyledString {
 		this.templateArgs = templateArgs;
 	}
 
+	name = 'StyledString';
+
 	toString () {
 		return compileTemplate(this.styles, ...this.templateArgs);
 	}

@@ -8,6 +8,10 @@ var _toConsumableArray2 = require('babel-runtime/helpers/toConsumableArray');
 
 var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 
+var _typeof2 = require('babel-runtime/helpers/typeof');
+
+var _typeof3 = _interopRequireDefault(_typeof2);
+
 exports.default = patchConsoleLog;
 
 var _StyledString = require('./StyledString');
@@ -24,7 +28,7 @@ function patchConsoleLog() {
 		}
 
 		args = args.map(function (arg) {
-			return arg instanceof _StyledString2.default ? arg.toString() : arg;
+			return (typeof arg === 'undefined' ? 'undefined' : (0, _typeof3.default)(arg)) === 'object' && arg.name == 'StyledString' ? arg.toString() : arg;
 		});
 		return log.apply(undefined, (0, _toConsumableArray3.default)(args));
 	};

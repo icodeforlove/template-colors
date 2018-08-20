@@ -6,7 +6,7 @@ export default function patchDebugLog () {
 			coerce = Debug.coerce;
 
 		Debug.coerce = function (...args) {
-			args = args.map(arg => arg instanceof StyledString ? arg.toString() : arg);
+			args = args.map(arg => typeof arg === 'object' && arg.name == 'StyledString' ? arg.toString() : arg);
 			return coerce(...args);
 		};
 	} catch (error) {
