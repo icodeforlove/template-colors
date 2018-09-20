@@ -2,7 +2,7 @@ import StyledString from './StyledString';
 
 export default function patchDebugLog () {
 	try {
-		let Debug = require('debug'),
+		let Debug = require('req-once')('debug'),
 			coerce = Debug.coerce;
 
 		Debug.coerce = function (...args) {

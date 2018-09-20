@@ -1,6 +1,6 @@
 {
   "name": "template-colors",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "beautiful color usage within template literals",
   "main": "dist/index.js",
   "scripts": {
@@ -17,7 +17,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "colors": "^1.1.2"
+    "colors": "^1.1.2",
+    "req-once": "0.0.1"
   },
   "devDependencies": {
     "babel": "^6.5.2",

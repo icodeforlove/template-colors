@@ -22,7 +22,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function patchDebugLog() {
 	try {
-		var Debug = require('debug'),
+		var Debug = require('req-once')('debug'),
 		    coerce = Debug.coerce;
 
 		Debug.coerce = function () {
