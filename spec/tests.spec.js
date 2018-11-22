@@ -4,6 +4,16 @@ c.define('error', 'rgb(255,0,0)');
 c.define('log', ['rgb(0,0,0)', 'rgbBG(255,255,255)', 'bold', 'underline', 'italic']);
 
 describe('General', () => {
+	it('can log false values', () => {
+		let passed = false;
+		try {
+			console.log(null);
+			console.log(0);
+			console.log(undefined);
+			passed = true;
+		} catch (error) {console.log(error)}
+		expect(passed).toBe(true);
+	});
 	it('can use inline styles', () => {
 		expect(c`${'foobar'}.red`.toString()).toBe('[31mfoobar[39m');
 		expect(c`foo${'bar'}.red`.toString()).toBe('foo[31mbar[39m');

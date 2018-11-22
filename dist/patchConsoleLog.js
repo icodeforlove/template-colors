@@ -28,7 +28,7 @@ function patchConsoleLog() {
 		}
 
 		args = args.map(function (arg) {
-			return (typeof arg === 'undefined' ? 'undefined' : (0, _typeof3.default)(arg)) === 'object' && arg.name == 'StyledString' ? arg.toString() : arg;
+			return arg && (typeof arg === 'undefined' ? 'undefined' : (0, _typeof3.default)(arg)) === 'object' && arg.name === 'StyledString' ? arg.toString() : arg;
 		});
 		return log.apply(undefined, (0, _toConsumableArray3.default)(args));
 	};
