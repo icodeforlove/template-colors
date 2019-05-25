@@ -66,8 +66,10 @@ function compileTemplate(defaultStyles, strings) {
 	var string = '';
 
 	strings.forEach(function (item, index, strings) {
-		var after = String(replacements.shift() || ''),
+		var after = replacements.shift(),
 		    next = strings[index + 1];
+
+		after = typeof after === 'undefined' ? '' : String(after);
 
 		// strip style commands
 		item = String(item).replace(COLORS_REGEXP, '');

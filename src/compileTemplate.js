@@ -38,8 +38,10 @@ export default function compileTemplate (defaultStyles, strings, ...replacements
 	let string = '';
 
 	strings.forEach((item, index, strings) => {
-		let after = String(replacements.shift() || ''),
+		let after = replacements.shift(),
 			next = strings[index + 1];
+
+		after = typeof after === 'undefined' ? '' : String(after);
 
 		// strip style commands
 		item = String(item).replace(COLORS_REGEXP, '');
